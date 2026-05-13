@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+function gerarVetor(){
+
+    vetor = [];
+
+    for(let i = 0; i < 40; i++){
+        vetor.push(Math.floor(Math.random() * 350) + 20);
+    }
+
+    desenharVetor();
+}
+
+function desenharVetor(){
+
+    const array = document.getElementById('array');
+
+    array.innerHTML = '';
+
+    for(let i = 0; i < vetor.length; i++){
+
+        const barra = document.createElement('div');
+
+        barra.classList.add('bar');
+
+        barra.style.height = vetor[i] + 'px';
+
+        array.appendChild(barra);
+    }
+}
+
+function sleep(ms){
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function quickSort(inicio, fim){
+
+    if(inicio >= fim){
+        return;
+    }
+
+    let indicePivo = await particionar(inicio, fim);
+
+    await quickSort(inicio, indicePivo - 1);
+
+    await quickSort(indicePivo + 1, fim);
+}
+
+async function particionar(inicio, fim){
+
+    let pivo = vetor[fim];
+
+    let i = inicio - 1;
+
+    for(let j = inicio; j < fim; j++){
+
+        if(vetor[j] < pivo){
+
+            i++;
+
+            [vetor[i], vetor[j]] = [vetor[j], vetor[i]];
+
+            desenharVetor();
+
+            await sleep(60);
+        }
+    }
+
+    [vetor[i + 1], vetor[fim]] = [vetor[fim], vetor[i + 1]];
+
+    desenharVetor();
+
+    await sleep(60);
+
+    return i + 1;
+}
+
+async function quickSortInicio(){
+    await quickSort(0, vetor.length - 1);
+}
+
+gerarVetor();
+
+</script>
+
+</body>
+</html>
