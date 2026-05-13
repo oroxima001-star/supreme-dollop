@@ -1,4 +1,45 @@
 <!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Quick Sort</title>
+
+<style>
+
+body{
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
+    height:100vh;
+    background:#111;
+}
+
+#array{
+    display:flex;
+    align-items:flex-end;
+    gap:3px;
+    height:400px;
+}
+
+.bar{
+    width:15px;
+    background:#00ff88;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="array"></div>
+
+<script>
+
+let vetor = [];
+
 function gerarVetor(){
 
     vetor = [];
@@ -79,6 +120,8 @@ async function quickSortInicio(){
 }
 
 gerarVetor();
+
+quickSortInicio();
 
 </script>
 
