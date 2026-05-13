@@ -15,8 +15,4 @@ Este projeto apresenta o algoritmo Quick Sort funcionando diretamente no navegad
 - Pior caso: O(n²)
 
 ## Link do Site
-https://SEUUSUARIO.github.io/ordenacao-web
-
-https://oroxima001-star.github.io/oroxima001-star/
-
-https://oroxima001-star.github.io/
+https://oroxima001-star.github.io/supreme-dollop/
